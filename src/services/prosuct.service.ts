@@ -1,6 +1,5 @@
 import { Product } from '../interfaces/interfaceProduct';
 import ProductModel from '../models/product';
-// import connection from '../models/connection/connection';
 
 export default class ProductService {
   model: ProductModel;
@@ -11,5 +10,9 @@ export default class ProductService {
 
   create(product:Product): Promise<Product> {
     return this.model.create(product);
+  }
+
+  async findAll():Promise<Product[]> {
+    return this.model.findAll();
   }
 }

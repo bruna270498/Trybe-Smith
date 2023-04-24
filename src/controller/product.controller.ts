@@ -6,6 +6,7 @@ export default class ProductController {
 
   constructor(productservice = new ProductService()) {
     this.productservice = productservice;
+    this.findAll = this.findAll.bind(this);
     this.create = this.create.bind(this);
   }
 
@@ -13,5 +14,10 @@ export default class ProductController {
     const product = req.body;
     const createProduct = await this.productservice.create(product);
     res.status(201).json(createProduct);
+  }
+
+  async findAll(_req:Request, res:Response):Promise<void> {
+    const products = await this.productservice.findAll();
+    res.status(200).json(products);
   }
 }
