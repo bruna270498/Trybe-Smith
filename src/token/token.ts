@@ -4,7 +4,7 @@ import TokenInterface from '../interfaces/token.interfaces';
 const secret = process.env.JWT_SECRET || 'seusecretdetoken';
 
 const jwtConfig:SignOptions = {
-  expiresIn: '7d',
+  expiresIn: '30m',
   algorithm: 'HS256',
 };
 
