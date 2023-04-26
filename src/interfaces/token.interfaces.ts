@@ -1,4 +1,4 @@
 export default interface TokenInterface {
-  id: number | null,
+  id?: number | null,
   username: string,
 }
